@@ -485,7 +485,7 @@ class MBOMA_MindbodyAudio extends ET_Builder_Module {
 				    <p class=wp-audio-description>%11$s</p>
 				</div>
 				<div class=wp-audio-price-signup">
-				    <a href="#">Buy</a> | <a href="#">Subscribe</a>
+				    <a href="#">Buy (%12$s) </a> | <a href="#">Subscribe</a>
 				</div>
 			</div>',
 			$title, // #1
@@ -502,7 +502,8 @@ class MBOMA_MindbodyAudio extends ET_Builder_Module {
 			$parallax_image_background, // #8
 			et_core_esc_previously( $data_background_layout ), // #9
 			et_core_esc_previously( $muti_view_data_attr ), // #10
-			$this->props['description'] // #11 
+			$this->props['description'], // #11 
+			$this->mbo_product_details[$this->props['title']]['price'] // #12
 		);
 		
 		$this->props['meta'] = et_core_esc_previously( $meta );
