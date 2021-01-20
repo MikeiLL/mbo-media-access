@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Amazing Mbo Media Access
+Plugin Name: A Mindbody Media Access Plugin
 Plugin URI:  http://mzoo.org
 Description: Add Mindbody media products to Divi pages.
 Version:     1.0.0
