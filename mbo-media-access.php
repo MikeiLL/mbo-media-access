@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Mbo Media Access
+Plugin Name: Amazing Mbo Media Access
 Plugin URI:  http://mzoo.org
 Description: Add Mindbody media products to Divi pages.
 Version:     1.0.0
@@ -26,14 +26,14 @@ along with Mbo Media Access. If not, see https://www.gnu.org/licenses/gpl-2.0.ht
 */
 
 
-if ( ! function_exists( 'mbma_initialize_extension' ) ):
+if ( ! function_exists( 'mboma_initialize_extension' ) ):
 /**
  * Creates the extension's main class instance.
  *
  * @since 1.0.0
  */
-function mbma_initialize_extension() {
+function mboma_initialize_extension() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/MboMediaAccess.php';
 }
-add_action( 'divi_extensions_init', 'mbma_initialize_extension' );
+add_action( 'divi_extensions_init', 'mboma_initialize_extension' );
 endif;

@@ -6,7 +6,7 @@ import './style.css';
 
 class Input extends Component {
 
-  static slug = 'mbma_input';
+  static slug = 'mboma_input';
 
   /**
    * Handle input value change.

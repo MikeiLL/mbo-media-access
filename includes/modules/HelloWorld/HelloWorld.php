@@ -1,8 +1,8 @@
 <?php
 
-class MBMA_HelloWorld extends ET_Builder_Module {
+class MBOMA_HelloWorld extends ET_Builder_Module {
 
-	public $slug       = 'mbma_hello_world';
+	public $slug       = 'mboma_hello_world';
 	public $vb_support = 'on';
 
 	protected $module_credits = array(
@@ -32,4 +32,4 @@ class MBMA_HelloWorld extends ET_Builder_Module {
 	}
 }
 
-new MBMA_HelloWorld;
+new MBOMA_HelloWorld;

@@ -7,7 +7,7 @@ import './style.css';
 
 class HelloWorld extends Component {
 
-  static slug = 'mbma_hello_world';
+  static slug = 'mboma_hello_world';
 
   render() {
     const Content = this.props.content;
