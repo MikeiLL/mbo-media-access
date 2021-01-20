@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: A Mindbody Media Access Plugin
+Plugin Name: Mindbody Media Access Plugin
 Plugin URI:  http://mzoo.org
 Description: Add Mindbody media products to Divi pages.
 Version:     1.0.0
@@ -8,7 +8,7 @@ Author:      Mike iLL Kilmer
 Author URI:  http://mzoo.org
 License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: mbma-mbo-media-access
+Text Domain: mboma-mbo-media-access
 Domain Path: /languages
 
 Mbo Media Access is free software: you can redistribute it and/or modify

@@ -5,8 +5,8 @@ use On_Demand_Yoga\Inc\Products as Products;
 
 class MBOMA_MindbodyAudio extends ET_Builder_Module {
 	function init() {
-		$this->name       = esc_html__( 'Mindbody Audio Product', 'mbma-mbo-media-access' );
-		$this->plural     = esc_html__( 'Mindbody Audio', 'mbma-mbo-media-access' );
+		$this->name       = esc_html__( 'Mindbody Audio', 'mboma-mbo-media-access' );
+		$this->plural     = esc_html__( 'Mindbody Audio', 'mboma-mbo-media-access' );
 		$this->slug       = 'mboma_mindbody_audio';
 		$this->vb_support = 'on';
 		
@@ -16,7 +16,7 @@ class MBOMA_MindbodyAudio extends ET_Builder_Module {
 			'general'  => array(
 				'toggles' => array(
 					'main_content' => et_builder_i18n( 'Text' ),
-					'audio'        => esc_html__( 'Audio', 'mbma-mbo-media-access' ),
+					'audio'        => esc_html__( 'Audio', 'mboma-mbo-media-access' ),
 					'image'        => et_builder_i18n( 'Image' ),
 				),
 			),
@@ -45,7 +45,7 @@ class MBOMA_MindbodyAudio extends ET_Builder_Module {
 					),
 				),
 				'caption' => array(
-					'label' => esc_html__( 'Caption', 'mbma-mbo-media-access' ),
+					'label' => esc_html__( 'Caption', 'mboma-mbo-media-access' ),
 					'css'   => array(
 						'line_height'  => "{$this->main_css_element} p",
 						'main'         => "{$this->main_css_element} p",
@@ -87,7 +87,7 @@ class MBOMA_MindbodyAudio extends ET_Builder_Module {
 					),
 				),
 				'image'   => array(
-					'label'             => esc_html__( 'Image Box Shadow', 'mbma-mbo-media-access' ),
+					'label'             => esc_html__( 'Image Box Shadow', 'mboma-mbo-media-access' ),
 					'option_category'   => 'layout',
 					'tab_slug'          => 'advanced',
 					'toggle_slug'       => 'image',
@@ -150,35 +150,35 @@ class MBOMA_MindbodyAudio extends ET_Builder_Module {
 
 		$this->custom_css_fields = array(
 			'audio_cover_art'       => array(
-				'label'    => esc_html__( 'Audio Cover Art', 'mbma-mbo-media-access' ),
+				'label'    => esc_html__( 'Audio Cover Art', 'mboma-mbo-media-access' ),
 				'selector' => '.et_pb_audio_cover_art',
 			),
 			'audio_content'         => array(
-				'label'    => esc_html__( 'Audio Content', 'mbma-mbo-media-access' ),
+				'label'    => esc_html__( 'Audio Content', 'mboma-mbo-media-access' ),
 				'selector' => '.et_pb_audio_module_content',
 			),
 			'audio_title'           => array(
-				'label'    => esc_html__( 'Audio Title', 'mbma-mbo-media-access' ),
+				'label'    => esc_html__( 'Audio Title', 'mboma-mbo-media-access' ),
 				'selector' => '.et_pb_audio_module_content h2',
 			),
 			'audio_meta'            => array(
-				'label'    => esc_html__( 'Audio Meta', 'mbma-mbo-media-access' ),
+				'label'    => esc_html__( 'Audio Meta', 'mboma-mbo-media-access' ),
 				'selector' => '.et_audio_module_meta',
 			),
 			'audio_buttons'         => array(
-				'label'    => esc_html__( 'Player Buttons', 'mbma-mbo-media-access' ),
+				'label'    => esc_html__( 'Player Buttons', 'mboma-mbo-media-access' ),
 				'selector' => "{$this->main_css_element} .mejs-button.mejs-playpause-button button:before,{$this->main_css_element} .mejs-button.mejs-volume-button.mejs-mute button:before",
 			),
 			'audio_timer'           => array(
-				'label'    => esc_html__( 'Player Timer', 'mbma-mbo-media-access' ),
+				'label'    => esc_html__( 'Player Timer', 'mboma-mbo-media-access' ),
 				'selector' => '.mejs-time.mejs-duration-container .mejs-duration',
 			),
 			'audio_sliders'         => array(
-				'label'    => esc_html__( 'Player Sliders', 'mbma-mbo-media-access' ),
+				'label'    => esc_html__( 'Player Sliders', 'mboma-mbo-media-access' ),
 				'selector' => "{$this->main_css_element} .et_audio_container .mejs-controls .mejs-time-rail .mejs-time-total,{$this->main_css_element} .et_audio_container .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total",
 			),
 			'audio_sliders_current' => array(
-				'label'    => esc_html__( 'Player Sliders Current', 'mbma-mbo-media-access' ),
+				'label'    => esc_html__( 'Player Sliders Current', 'mboma-mbo-media-access' ),
 				'selector' => "{$this->main_css_element} .et_audio_container .mejs-controls .mejs-time-rail .mejs-time-current,{$this->main_css_element} .et_audio_container .mejs-controls .mejs-time-rail .mejs-time-handle,{$this->main_css_element} .et_audio_container .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current,{$this->main_css_element} .et_audio_container .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-handle",
 			),
 		);
@@ -186,7 +186,7 @@ class MBOMA_MindbodyAudio extends ET_Builder_Module {
 		$this->help_videos = array(
 			array(
 				'id'   => '3bg1qUaSZ5I',
-				'name' => esc_html__( 'An introduction to the Audio Player module', 'mbma-mbo-media-access' ),
+				'name' => esc_html__( 'An introduction to the Audio Player module', 'mboma-mbo-media-access' ),
 			),
 		);
 	}
@@ -259,49 +259,49 @@ class MBOMA_MindbodyAudio extends ET_Builder_Module {
 
 		$fields = array(
 			'audio'       => array(
-				'label'              => esc_html__( 'Audio File', 'mbma-mbo-media-access' ),
+				'label'              => esc_html__( 'Audio File', 'mboma-mbo-media-access' ),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
 				'data_type'          => 'audio',
-				'upload_button_text' => esc_attr__( 'Upload an audio file', 'mbma-mbo-media-access' ),
-				'choose_text'        => esc_attr__( 'Choose an Audio file', 'mbma-mbo-media-access' ),
-				'update_text'        => esc_attr__( 'Set As Audio for the module', 'mbma-mbo-media-access' ),
-				'description'        => esc_html__( 'Define the audio file for use in the module. To remove an audio file from the module, simply delete the URL from the settings field.', 'mbma-mbo-media-access' ),
+				'upload_button_text' => esc_attr__( 'Upload an audio file', 'mboma-mbo-media-access' ),
+				'choose_text'        => esc_attr__( 'Choose an Audio file', 'mboma-mbo-media-access' ),
+				'update_text'        => esc_attr__( 'Set As Audio for the module', 'mboma-mbo-media-access' ),
+				'description'        => esc_html__( 'Define the audio file for use in the module. To remove an audio file from the module, simply delete the URL from the settings field.', 'mboma-mbo-media-access' ),
 				'toggle_slug'        => 'audio',
 				'computed_affects'   => array(
 					'__audio',
 				),
 			),
 			'title' => array(
-				'label'           => esc_html__( 'Product Title', 'mbma-mbo-media-access' ),
+				'label'           => esc_html__( 'Product Title', 'mboma-mbo-media-access' ),
 				'type'            => 'select',
 				'default'         => 'No Product Selected',
 				'option_category' => 'basic_option',
 				'options'         => $this->get_products(),
 				'description'     => esc_html__( 'Select Media Product from Mindbody.
-				', 'mbma-mbo-media-access' ),
+				', 'mboma-mbo-media-access' ),
 				'toggle_slug'     => 'main_content',
 				'dynamic_content' => 'text',
 				'mobile_options'  => true,
 				'hover'           => 'tabs'
 			),
 			'artist_name' => array(
-				'label'           => esc_html__( 'Instructor', 'mbma-mbo-media-access' ),
+				'label'           => esc_html__( 'Instructor', 'mboma-mbo-media-access' ),
 				'type'            => 'text',
 				'default'         => 'No Instructor Specified',
 				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Who is the instructor?', 'mbma-mbo-media-access' ),
+				'description'     => esc_html__( 'Who is the instructor?', 'mboma-mbo-media-access' ),
 				'toggle_slug'     => 'main_content',
 				'dynamic_content' => 'text',
 				'mobile_options'  => true,
 				'hover'           => 'tabs',
 			),
 			'description' => array(
-				'label'           => esc_html__( 'Description', 'mbma-mbo-media-access' ),
+				'label'           => esc_html__( 'Description', 'mboma-mbo-media-access' ),
 				'type'            => 'text',
 				'default'         => 'Description coming soon!',
 				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Brief description of media product.', 'mbma-mbo-media-access' ),
+				'description'     => esc_html__( 'Brief description of media product.', 'mboma-mbo-media-access' ),
 				'toggle_slug'     => 'main_content',
 				'dynamic_content' => 'text',
 				'mobile_options'  => true,
@@ -312,9 +312,9 @@ class MBOMA_MindbodyAudio extends ET_Builder_Module {
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
 				'upload_button_text' => et_builder_i18n( 'Upload an image' ),
-				'choose_text'        => esc_attr__( 'Choose an Image', 'mbma-mbo-media-access' ),
-				'update_text'        => esc_attr__( 'Set As Image', 'mbma-mbo-media-access' ),
-				'description'        => esc_html__( 'Upload your desired image, or type in the URL to the image you would like to display.', 'mbma-mbo-media-access' ),
+				'choose_text'        => esc_attr__( 'Choose an Image', 'mboma-mbo-media-access' ),
+				'update_text'        => esc_attr__( 'Set As Image', 'mboma-mbo-media-access' ),
+				'description'        => esc_html__( 'Upload your desired image, or type in the URL to the image you would like to display.', 'mboma-mbo-media-access' ),
 				'toggle_slug'        => 'image',
 				'computed_affects'   => array(
 					'__audio',
@@ -404,7 +404,7 @@ class MBOMA_MindbodyAudio extends ET_Builder_Module {
 
 		if ( $artist_name ) {
 			$metas[] = sprintf(
-				et_get_safe_localization( _x( 'with %1$s', 'Audio Module meta information', 'mbma-mbo-media-access' ) ),
+				et_get_safe_localization( _x( 'with %1$s', 'Audio Module meta information', 'mboma-mbo-media-access' ) ),
 				et_core_esc_previously( $artist_name )
 			);
 		}
