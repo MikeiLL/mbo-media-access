@@ -1,3 +1,34 @@
+
+.et_pb_audio_module_content {
+	padding-bottom: 25px !important;
+}
+
+/*p*/.wp-audio-description {
+	text-align: center;
+}
+
+.wp-audio-description-wrapper,
 .wp-audio-price-signup {
-    border: 3px solid magenta;
+	margin-left: 220px;
+}
+
+.et_pb_audio_no_image .wp-audio-description-wrapper,
+.et_pb_audio_no_image .wp-audio-price-signup {
+	margin-left: 0px;
+}
+
+.wp-audio-price-signup {
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+.wp-audio-price-signup a {
+	color: rgb(184, 71, 66); /* TEMP */
+	font-weight: 500;
+}
+
+@media (min-width: 768px) {
+	/* 9 */.wp-audio-description {
+		margin: 0 auto 20px auto;
+	}	
 }
