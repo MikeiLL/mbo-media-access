@@ -10,6 +10,8 @@ class MBOMA_MindbodyAudio extends ET_Builder_Module {
 		$this->slug       = 'mboma_mindbody_audio';
 		$this->vb_support = 'on';
 		
+		wp_enqueue_style( 'mbo-audio-style', plugin_dir_url( __FILE__ ) . '/mindbodyaudio.css', array(), uniqid() );
+		
 		$this->main_css_element = '%%order_class%%.et_pb_audio_module';
 
 		$this->settings_modal_toggles = array(

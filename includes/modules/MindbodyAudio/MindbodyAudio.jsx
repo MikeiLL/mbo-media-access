@@ -2,7 +2,7 @@
 import React, { Component, Fragment } from 'react';
 
 // Internal Dependencies
-// import './style.css';
+import './mindbodyaudio.css';
 // for getting data from backend to builder
 // see: https://github.com/elegantthemes/create-divi-extension/issues/23
 
