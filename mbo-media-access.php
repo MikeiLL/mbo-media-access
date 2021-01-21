@@ -24,6 +24,57 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Mbo Media Access. If not, see https://www.gnu.org/licenses/gpl-2.0.html.
 */
+namespace MBO_Media_Access;
+use MBO_Media_Access as NS;
+
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
+/**
+ * Define Constants
+ */
+
+define( __NAMESPACE__ . '\NS', __NAMESPACE__ . '\\' );
+
+define( NS . 'PLUGIN_NAME', 'on-demand-yoga' );
+
+define( NS . 'PLUGIN_VERSION', '1.0.0' );
+
+define( NS . 'PLUGIN_NAME_DIR', plugin_dir_path( __FILE__ ) );
+
+define( NS . 'PLUGIN_NAME_URL', plugin_dir_url( __FILE__ ) );
+
+define( NS . 'PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+
+define( NS . 'PLUGIN_TEXT_DOMAIN', 'on-demand-yoga' );
+
+add_action( 'admin_init', __NAMESPACE__ . '\mbo_media_access_has_mindbody_api' );
+
+/**
+ * Insure that parent plugin, is active or deactivate plugin.
+ */
+function mbo_media_access_has_mindbody_api() {
+	if ( is_admin() && current_user_can( 'activate_plugins' ) && !is_plugin_active( 'mz-mindbody-api/mz-mindbody.php' ) ) {
+		add_action( 'admin_notices', __NAMESPACE__ . '\\mbo_media_access_child_plugin_notice' );
+
+		deactivate_plugins( plugin_basename( __FILE__ ) ); 
+
+		if ( isset( $_GET['activate'] ) ) {
+			unset( $_GET['activate'] );
+		}
+	}
+}
+
+
+
+/**
+ * Child Plugin Notice
+ */
+function mbo_media_access_child_plugin_notice(){
+		?><div class="error"><p><?php echo __("Sorry, but MZ MBO Media Access plugin requires the parent plugin, MZ Mindbody API, to be installed and active.", NS\PLUGIN_TEXT_DOMAIN); ?></p></div><?php
+}
 
 
 if ( ! function_exists( 'mboma_initialize_extension' ) ):
@@ -35,5 +86,6 @@ if ( ! function_exists( 'mboma_initialize_extension' ) ):
 function mboma_initialize_extension() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/MboMediaAccess.php';
 }
-add_action( 'divi_extensions_init', 'mboma_initialize_extension' );
+add_action( 'divi_extensions_init', __NAMESPACE__ . '\\mboma_initialize_extension' );
+
 endif;

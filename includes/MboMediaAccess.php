@@ -1,6 +1,8 @@
 <?php
+namespace MBO_Media_Access;
+use MBO_Media_Access as NS;
 
-class MBOMA_MboMediaAccess extends DiviExtension {
+class MBOMA_MboMediaAccess extends \DiviExtension {
 
 	/**
 	 * The gettext domain for the extension's translations.
@@ -38,7 +40,7 @@ class MBOMA_MboMediaAccess extends DiviExtension {
 	public function __construct( $name = 'mbo-media-access', $args = array() ) {
 		$this->plugin_dir     = plugin_dir_path( __FILE__ );
 		$this->plugin_dir_url = plugin_dir_url( $this->plugin_dir );
-
+        
 		parent::__construct( $name, $args );
 	}
 	
