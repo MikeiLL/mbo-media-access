@@ -67,6 +67,14 @@ function mbo_media_access_has_mindbody_api() {
 	}
 }
 
+function buy_subscribe_links($price){
+    $html = '';
+    $html .= '          <div class="wp-audio-price-signup">';
+	$html .= '			    <a href="#">Buy ($' . $price . ') </a> | <a href="#">Subscribe</a>';
+	$html .= '          </div>';
+	return $html;
+}
+
 
 
 /**
