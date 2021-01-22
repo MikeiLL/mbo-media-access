@@ -483,10 +483,10 @@ class MBOMA_MindbodyAudio extends ET_Builder_Module {
 					%2$s
 					%3$s
 				</div>
-				<div class=wp-audio-description-wrapper">
-				    <p class=wp-audio-description>%11$s</p>
+				<div class="wp-audio-description-wrapper">
+				    <p class="wp-audio-description">%11$s</p>
 				</div>
-				<div class=wp-audio-price-signup">
+				<div class="wp-audio-price-signup">
 				    <a href="#">Buy (%12$s) </a> | <a href="#">Subscribe</a>
 				</div>
 			</div>',
