@@ -516,6 +516,15 @@ class MBMA_MindbodyAudio extends ET_Builder_Module {
 					%2$s
 					%3$s
 				</div>
+<<<<<<< HEAD
+=======
+				<div class="wp-audio-description-wrapper">
+				    <p class="wp-audio-description">%11$s</p>
+				</div>
+				<div class="wp-audio-price-signup">
+				    <a href="#">Buy (%12$s) </a> | <a href="#">Subscribe</a>
+				</div>
+>>>>>>> 274805fafd9b26980475d4c15c719b457b9ae392
 			</div>',
 			$title, // #1
 			et_core_esc_previously( $meta ), // #2

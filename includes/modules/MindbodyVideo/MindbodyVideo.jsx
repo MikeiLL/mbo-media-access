@@ -11,18 +11,13 @@ class MindbodyVideo extends Component {
   static slug = 'mbma_mindbody_video';
 
   render() {
-    const src_webm = this.props.src_webm;
-    const __video = this.props.__video;
-    console.log(this.props.__video);
     return (
         <Fragment>
              <div className="et_pb_module mbma_mindbody_video mbma_mindbody_video_0">
                 <div className="et_pb_module_inner">
                     <div class="et_pb_module mbma_mindbody_video mbma_mindbody_video_0">
                         <div className="et_pb_video_box">
-                            <video controls="">
-                                <source type="video/webm" src="{src_webm}"/>
-                            </video>
+                            <div dangerouslySetInnerHTML={{ __html: this.props.__video }}></div>
                         </div>
                     </div>
                 </div>
