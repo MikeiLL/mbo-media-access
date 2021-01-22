@@ -8,25 +8,30 @@ import React, { Component, Fragment } from 'react';
 
 class MindbodyVideo extends Component {
 
-  static slug = 'mboma_mindbody_video';
+  static slug = 'mbma_mindbody_video';
 
   render() {
+    const title = this.props.title;
+    const artist_name = this.props.artist_name;
+    const description = this.props.description;
     return (
-      <Fragment>
-        
-        <div class="et_pb_module et_pb_video et_pb_video_0">
-				
-				
-				<div class="et_pb_video_box">
-				    <video controls="">
-					    <source type="video/mp4" src="http://local.divi-dev.site/wp-content/uploads/2021/01/Lightbulbs-Moving-in-the-Wind.webm"/>
-					
-				    </video>
-				</div>
-				
-			</div>
-        
-      </Fragment>
+        <Fragment>
+             <div className="et_pb_module mbma_mindbody_video mbma_mindbody_video_0">
+                <h1>
+                    {title} with {artist_name}
+                </h1>
+                <div className="et_pb_module_inner">
+                    <div class="et_pb_module mbma_mindbody_video mbma_mindbody_video_0">
+                        <div className="et_pb_video_box">
+                            <div dangerouslySetInnerHTML={{ __html: this.props.__video }}></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    {description}
+                </div>
+             </div>
+        </Fragment>
     );
   }
 }

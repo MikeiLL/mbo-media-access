@@ -8,20 +8,18 @@ import './mindbodyaudio.css';
 
 class MindbodyAudio extends Component {
 
-  static slug = 'mboma_mindbody_audio';
+  static slug = 'mbma_mindbody_audio';
 
   render() {
     const title = this.props.title;
     const artist_name = this.props.artist_name;
     const description = this.props.description;
-    const audio = this.props.audio;
-    // Maybe use dangerouslySetInnerHTML={{__html: this.props.__audio}} 
     return (
       <Fragment>
         
-        <div className="et_pb_module mboma_mindbody_audio_0 et_pb_audio_module clearfix et_pb_bg_layout_dark et_pb_audio_no_image">
+        <div className="et_pb_module mbma_mindbody_audio_0 et_pb_audio_module clearfix et_pb_bg_layout_dark et_pb_audio_no_image">
             <div className="et_pb_module_inner">
-                <div className="et_pb_module mboma_mindbody_audio_0 et_pb_audio_module clearfix et_pb_bg_layout_dark et_pb_audio_no_image">
+                <div className="et_pb_module mbma_mindbody_audio_0 et_pb_audio_module clearfix et_pb_bg_layout_dark et_pb_audio_no_image">
                     <div className="et_pb_audio_module_content et_audio_container">
                         <h2 className="et_pb_module_header">{title}</h2>
                         <p className="et_audio_module_meta">with <strong>{artist_name}</strong></p>
@@ -32,9 +30,7 @@ class MindbodyAudio extends Component {
                         style={{ width: '795.15px', height: '40px', min_width: '236px'}} >
                             <div className="mejs-inner">
                                 <div className="mejs-mediaelement">
-                                    <audio className="wp-audio-shortcode" id="audio-6-1_html5" preload="none" style={{width: '100%', height: '100%'}} src="{audio}">
-                                    <source type="audio/mpeg" src="{audio}"/>
-                                    <a href="{audio}">{audio}</a></audio>
+                                    <div dangerouslySetInnerHTML={{__html: this.props.__audio}}></div>
                                 </div>
                                 
                                 <div className="mejs-layers">
