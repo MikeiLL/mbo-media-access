@@ -1,5 +1,5 @@
 
-<<<<<<< HEAD
+
 /* BEGIN BORDER RADIUS */
 .et_pb_audio_module {
 	border-radius: 10px;
@@ -31,7 +31,8 @@
 .wp-audio-price-signup {
 	text-align: center;
 	padding-bottom: 10px;
-=======
+}
+ 
 .et_pb_audio_module_content {
 	padding-bottom: 25px !important;
 }
@@ -53,12 +54,10 @@
 .wp-audio-price-signup {
 	text-align: center;
 	padding-bottom: 5px;
->>>>>>> 9f681f53ea43e0d561378a480467b0fdc117fe34
 }
 
 .wp-audio-price-signup a {
 	color: rgb(184, 71, 66); /* TEMP */
-<<<<<<< HEAD
 	font-weight: 600;
 }
 
