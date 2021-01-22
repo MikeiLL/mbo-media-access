@@ -464,20 +464,33 @@ class MBMA_MindbodyVideo extends ET_Builder_Module {
 				'required'   => 'image_src',
 			)
 		);
-
+		
+        // initialize variables in case not retrieved
+        $price = isset($this->mbo_product_details[$this->props['title']]['price']) ? $this->mbo_product_details[$this->props['title']]['price'] : '$$';
+        
 		$output = sprintf(
 			'<div%2$s class="%3$s">
 				%6$s
 				%5$s
 				%1$s
 				%4$s
-			</div>',
+			</div>
+            <div class="wp-audio-description-wrapper">
+                <h1>%9$s</h1>
+                <p class="wp-audio-description">%7$s</p>
+            </div>
+            <div class="wp-audio-price-signup">
+                <a href="#">Buy ($%8$s) </a> | <a href="#">Subscribe</a>
+            </div>',
 			( '' !== $video_src ? $video_src : '' ),
 			$this->module_id(),
 			$this->module_classname( $render_slug ),
 			$muti_view_video_overlay,
 			$video_background,
-			$parallax_image_background
+			$parallax_image_background,
+			$this->props['description'], // #7 
+			$price, // #8
+			$this->props['title'] // #9
 		);
 
 		return $output;

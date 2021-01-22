@@ -505,7 +505,10 @@ class MBMA_MindbodyAudio extends ET_Builder_Module {
 				),
 			)
 		);
-
+        
+        // initialize variables in case not retrieved
+        $price = isset($this->mbo_product_details[$this->props['title']]['price']) ? $this->mbo_product_details[$this->props['title']]['price'] : '$$';
+        
 		$output = sprintf(
 			'<div%6$s class="%4$s"%9$s%10$s>
 				%8$s
@@ -516,15 +519,12 @@ class MBMA_MindbodyAudio extends ET_Builder_Module {
 					%2$s
 					%3$s
 				</div>
-<<<<<<< HEAD
-=======
 				<div class="wp-audio-description-wrapper">
 				    <p class="wp-audio-description">%11$s</p>
 				</div>
 				<div class="wp-audio-price-signup">
 				    <a href="#">Buy (%12$s) </a> | <a href="#">Subscribe</a>
 				</div>
->>>>>>> 274805fafd9b26980475d4c15c719b457b9ae392
 			</div>',
 			$title, // #1
 			et_core_esc_previously( $meta ), // #2
@@ -539,7 +539,9 @@ class MBMA_MindbodyAudio extends ET_Builder_Module {
 			$video_background, // #7
 			$parallax_image_background, // #8
 			et_core_esc_previously( $data_background_layout ), // #9
-			et_core_esc_previously( $muti_view_data_attr ) // #10
+			et_core_esc_previously( $muti_view_data_attr ), // #10
+			$this->props['description'], // #11 
+			'$'.$price // #12
 		);
 
 		return $output;
