@@ -8,7 +8,7 @@ import './mindbodyaudio.css';
 
 class MindbodyAudio extends Component {
 
-  static slug = 'mboma_mindbody_audio';
+  static slug = 'mbma_mindbody_audio';
 
   render() {
     const title = this.props.title;
@@ -19,9 +19,9 @@ class MindbodyAudio extends Component {
     return (
       <Fragment>
         
-        <div className="et_pb_module mboma_mindbody_audio_0 et_pb_audio_module clearfix et_pb_bg_layout_dark et_pb_audio_no_image">
+        <div className="et_pb_module mbma_mindbody_audio_0 et_pb_audio_module clearfix et_pb_bg_layout_dark et_pb_audio_no_image">
             <div className="et_pb_module_inner">
-                <div className="et_pb_module mboma_mindbody_audio_0 et_pb_audio_module clearfix et_pb_bg_layout_dark et_pb_audio_no_image">
+                <div className="et_pb_module mbma_mindbody_audio_0 et_pb_audio_module clearfix et_pb_bg_layout_dark et_pb_audio_no_image">
                     <div className="et_pb_audio_module_content et_audio_container">
                         <h2 className="et_pb_module_header">{title}</h2>
                         <p className="et_audio_module_meta">with <strong>{artist_name}</strong></p>

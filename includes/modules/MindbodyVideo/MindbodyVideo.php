@@ -3,24 +3,35 @@
 use On_Demand_Yoga as NS;
 use On_Demand_Yoga\Inc\Products as Products;
 
-class MBOMA_MindbodyVideo extends ET_Builder_Module {
+class MBMA_MindbodyVideo extends ET_Builder_Module {
+
+    /**
+     * MBO Product Details
+     *
+     * @access public
+     * Store details about product selected from Mindbody
+     */
+    public $mbo_product_details = array();
+    
+    
 	function init() {
-		$this->name       = esc_html__( 'Mindbody Video', 'mboma-mbo-media-access' );
-		$this->plural     = esc_html__( 'Mindbody Videos', 'mboma-mbo-media-access' );
-		$this->slug       = 'mboma_mindbody_video';
+		$this->mbo_product_details = array();
+		$this->name       = esc_html__( 'Mindbody Video', 'mbma-mbo-media-access' );
+		$this->plural     = esc_html__( 'Mindbody Videos', 'mbma-mbo-media-access' );
+		$this->slug       = 'mbma_mindbody_video';
 		$this->vb_support = 'on';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'main_content' => et_builder_i18n( 'Text' ),
-					'video' => esc_html__( 'Video', 'mboma-mbo-media-access' ),
+					'main_content' => et_builder_i18n( 'Product Details' ),
+					'video' => esc_html__( 'Video', 'et_builder' ),
 					'overlay'      => et_builder_i18n( 'Overlay' ),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'play_icon' => esc_html__( 'Play Icon', 'mboma-mbo-media-access' ),
+					'play_icon' => esc_html__( 'Play Icon', 'et_builder' ),
 					'overlay'   => et_builder_i18n( 'Overlay' ),
 				),
 			),
@@ -28,7 +39,7 @@ class MBOMA_MindbodyVideo extends ET_Builder_Module {
 
 		$this->custom_css_fields = array(
 			'video_icon' => array(
-				'label'    => esc_html__( 'Video Icon', 'mboma-mbo-media-access' ),
+				'label'    => esc_html__( 'Video Icon', 'et_builder' ),
 				'selector' => '.et_pb_video_play',
 			),
 		);
@@ -80,7 +91,7 @@ class MBOMA_MindbodyVideo extends ET_Builder_Module {
 		$this->help_videos = array(
 			array(
 				'id'   => '3jXN8CBz0TU',
-				'name' => esc_html__( 'An introduction to the Video module', 'mboma-mbo-media-access' ),
+				'name' => esc_html__( 'An introduction to the Video module', 'et_builder' ),
 			),
 		);
 	}
@@ -107,7 +118,7 @@ class MBOMA_MindbodyVideo extends ET_Builder_Module {
 
 	function get_fields() {
 		$fields = array(
-			'title' => array(
+		    'title' => array(
 				'label'           => esc_html__( 'Product Title', 'mbma-mbo-media-access' ),
 				'type'            => 'select',
 				'default'         => 'No Product Selected',
@@ -143,14 +154,14 @@ class MBOMA_MindbodyVideo extends ET_Builder_Module {
 				'hover'           => 'tabs',
 			),
 			'src'                     => array(
-				'label'              => esc_html__( 'Video MP4 File Or Youtube URL', 'mboma-mbo-media-access' ),
+				'label'              => esc_html__( 'Video MP4 File Or Youtube URL', 'et_builder' ),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
 				'data_type'          => 'video',
-				'upload_button_text' => esc_attr__( 'Upload a video', 'mboma-mbo-media-access' ),
-				'choose_text'        => esc_attr__( 'Choose a Video MP4 File', 'mboma-mbo-media-access' ),
-				'update_text'        => esc_attr__( 'Set As Video', 'mboma-mbo-media-access' ),
-				'description'        => esc_html__( 'Upload your desired video in .MP4 format, or type in the URL to the video you would like to display', 'mboma-mbo-media-access' ),
+				'upload_button_text' => esc_attr__( 'Upload a video', 'et_builder' ),
+				'choose_text'        => esc_attr__( 'Choose a Video MP4 File', 'et_builder' ),
+				'update_text'        => esc_attr__( 'Set As Video', 'et_builder' ),
+				'description'        => esc_html__( 'Upload your desired video in .MP4 format, or type in the URL to the video you would like to display', 'et_builder' ),
 				'toggle_slug'        => 'video',
 				'computed_affects'   => array(
 					'__video',
@@ -159,14 +170,14 @@ class MBOMA_MindbodyVideo extends ET_Builder_Module {
 				'hover'              => 'tabs',
 			),
 			'src_webm'                => array(
-				'label'              => esc_html__( 'Video WEBM File', 'mboma-mbo-media-access' ),
+				'label'              => esc_html__( 'Video WEBM File', 'et_builder' ),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
 				'data_type'          => 'video',
-				'upload_button_text' => esc_attr__( 'Upload a video', 'mboma-mbo-media-access' ),
-				'choose_text'        => esc_attr__( 'Choose a Video WEBM File', 'mboma-mbo-media-access' ),
-				'update_text'        => esc_attr__( 'Set As Video', 'mboma-mbo-media-access' ),
-				'description'        => esc_html__( 'Upload the .WEBM version of your video here. All uploaded videos should be in both .MP4 .WEBM formats to ensure maximum compatibility in all browsers.', 'mboma-mbo-media-access' ),
+				'upload_button_text' => esc_attr__( 'Upload a video', 'et_builder' ),
+				'choose_text'        => esc_attr__( 'Choose a Video WEBM File', 'et_builder' ),
+				'update_text'        => esc_attr__( 'Set As Video', 'et_builder' ),
+				'description'        => esc_html__( 'Upload the .WEBM version of your video here. All uploaded videos should be in both .MP4 .WEBM formats to ensure maximum compatibility in all browsers.', 'et_builder' ),
 				'toggle_slug'        => 'video',
 				'computed_affects'   => array(
 					'__video',
@@ -175,22 +186,22 @@ class MBOMA_MindbodyVideo extends ET_Builder_Module {
 				'hover'              => 'tabs',
 			),
 			'image_src'               => array(
-				'label'                   => esc_html__( 'Overlay Image', 'mboma-mbo-media-access' ),
+				'label'                   => esc_html__( 'Overlay Image', 'et_builder' ),
 				'type'                    => 'upload',
 				'option_category'         => 'basic_option',
 				'upload_button_text'      => et_builder_i18n( 'Upload an image' ),
-				'choose_text'             => esc_attr__( 'Choose an Image', 'mboma-mbo-media-access' ),
-				'update_text'             => esc_attr__( 'Set As Image', 'mboma-mbo-media-access' ),
+				'choose_text'             => esc_attr__( 'Choose an Image', 'et_builder' ),
+				'update_text'             => esc_attr__( 'Set As Image', 'et_builder' ),
 				'additional_button'       => sprintf(
 					'<input type="button" class="button et-pb-video-image-button" value="%1$s" />',
-					esc_attr__( 'Generate Image From Video', 'mboma-mbo-media-access' )
+					esc_attr__( 'Generate Image From Video', 'et_builder' )
 				),
 				'additional_button_type'  => 'generate_image_url_from_video',
 				'additional_button_attrs' => array(
 					'video_source' => 'src',
 				),
 				'classes'                 => 'et_pb_video_overlay',
-				'description'             => esc_html__( 'Upload your desired image, or type in the URL to the image you would like to display over your video. You can also generate a still image from your video.', 'mboma-mbo-media-access' ),
+				'description'             => esc_html__( 'Upload your desired image, or type in the URL to the image you would like to display over your video. You can also generate a still image from your video.', 'et_builder' ),
 				'toggle_slug'             => 'overlay',
 				'computed_affects'        => array(
 					'__video_cover_src',
@@ -200,8 +211,8 @@ class MBOMA_MindbodyVideo extends ET_Builder_Module {
 				'hover'                   => 'tabs',
 			),
 			'play_icon_color'         => array(
-				'label'          => esc_html__( 'Play Icon Color', 'mboma-mbo-media-access' ),
-				'description'    => esc_html__( 'Here you can define a custom color for the play icon.', 'mboma-mbo-media-access' ),
+				'label'          => esc_html__( 'Play Icon Color', 'et_builder' ),
+				'description'    => esc_html__( 'Here you can define a custom color for the play icon.', 'et_builder' ),
 				'type'           => 'color-alpha',
 				'custom_color'   => true,
 				'tab_slug'       => 'advanced',
@@ -233,8 +244,8 @@ class MBOMA_MindbodyVideo extends ET_Builder_Module {
 				),
 			),
 			'use_icon_font_size'      => array(
-				'label'            => esc_html__( 'Use Custom Icon Size', 'mboma-mbo-media-access' ),
-				'description'      => esc_html__( 'If you would like to control the size of the icon, you must first enable this option.', 'mboma-mbo-media-access' ),
+				'label'            => esc_html__( 'Use Custom Icon Size', 'et_builder' ),
+				'description'      => esc_html__( 'If you would like to control the size of the icon, you must first enable this option.', 'et_builder' ),
 				'type'             => 'yes_no_button',
 				'options'          => array(
 					'off' => et_builder_i18n( 'No' ),
@@ -249,8 +260,8 @@ class MBOMA_MindbodyVideo extends ET_Builder_Module {
 				'option_category'  => 'font_option',
 			),
 			'icon_font_size'          => array(
-				'label'            => esc_html__( 'Play Icon Font Size', 'mboma-mbo-media-access' ),
-				'description'      => esc_html__( 'Control the size of the icon by increasing or decreasing the font size.', 'mboma-mbo-media-access' ),
+				'label'            => esc_html__( 'Play Icon Font Size', 'et_builder' ),
+				'description'      => esc_html__( 'Control the size of the icon by increasing or decreasing the font size.', 'et_builder' ),
 				'type'             => 'range',
 				'option_category'  => 'font_option',
 				'tab_slug'         => 'advanced',
@@ -271,8 +282,8 @@ class MBOMA_MindbodyVideo extends ET_Builder_Module {
 				'hover'            => 'tabs',
 			),
 			'thumbnail_overlay_color' => array(
-				'label'            => esc_html__( 'Overlay Background Color', 'mboma-mbo-media-access' ),
-				'description'      => esc_html__( 'Pick a color to use for the overlay that appears behind the play icon when hovering over the video.', 'mboma-mbo-media-access' ),
+				'label'            => esc_html__( 'Overlay Background Color', 'et_builder' ),
+				'description'      => esc_html__( 'Pick a color to use for the overlay that appears behind the play icon when hovering over the video.', 'et_builder' ),
 				'type'             => 'color-alpha',
 				'custom_color'     => true,
 				'tab_slug'         => 'advanced',
@@ -507,4 +518,4 @@ class MBOMA_MindbodyVideo extends ET_Builder_Module {
 	}
 }
 
-new MBOMA_MindbodyVideo();
+new MBMA_MindbodyVideo();
