@@ -1,6 +1,6 @@
 <?php
 
-use On_Demand_Yoga as NS;
+use MBO_Media_Access as NS;
 use On_Demand_Yoga\Inc\Products as Products;
 
 class MBMA_MindbodyAudio extends ET_Builder_Module {
@@ -522,9 +522,7 @@ class MBMA_MindbodyAudio extends ET_Builder_Module {
 				<div class="wp-audio-description-wrapper">
 				    <p class="wp-audio-description">%11$s</p>
 				</div>
-				<div class="wp-audio-price-signup">
-				    <a href="#">Buy (%12$s) </a> | <a href="#">Subscribe</a>
-				</div>
+				%12$s
 			</div>',
 			$title, // #1
 			et_core_esc_previously( $meta ), // #2
@@ -541,7 +539,7 @@ class MBMA_MindbodyAudio extends ET_Builder_Module {
 			et_core_esc_previously( $data_background_layout ), // #9
 			et_core_esc_previously( $muti_view_data_attr ), // #10
 			$this->props['description'], // #11 
-			'$'.$price // #12
+			NS\buy_subscribe_links($price) // #12
 		);
 
 		return $output;
