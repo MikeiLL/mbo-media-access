@@ -18,6 +18,13 @@ class MBMA_MindbodyAudio extends ET_Builder_Module {
 		$this->plural     = esc_html__( 'Mindbody Audio', 'mbma-mbo-media-access' );
 		$this->slug       = 'mbma_mindbody_audio';
 		$this->vb_support = 'on';
+		// Default product details
+		$this->mbo_product_details = [
+                                    'name' => esc_html__( 'No Product Selected', 'mbma-mbo-media-access' ),
+                                    'id' => 000000,
+                                    'price' => 0000,
+                                    'short_description' => esc_html__( 'Description coming soon!', 'mbma-mbo-media-access' )
+                                ];
 		
 		wp_enqueue_style( 'mbo-audio-style', plugin_dir_url( __FILE__ ) . '/mindbodyaudio.css', array(), uniqid() );
 
@@ -285,7 +292,7 @@ class MBMA_MindbodyAudio extends ET_Builder_Module {
 			'title' => array(
 				'label'           => esc_html__( 'Product Title', 'mbma-mbo-media-access' ),
 				'type'            => 'select',
-				'default'         => 'No Product Selected',
+				'default'         => esc_html__( 'No Product Selected', 'mbma-mbo-media-access' ),
 				'option_category' => 'basic_option',
 				'options'         => $this->get_products(),
 				'description'     => esc_html__( 'Select Media Product from Mindbody.
@@ -309,7 +316,7 @@ class MBMA_MindbodyAudio extends ET_Builder_Module {
 			'description' => array(
 				'label'           => esc_html__( 'Description', 'mbma-mbo-media-access' ),
 				'type'            => 'text',
-				'default'         => 'Description coming soon!',
+				'default'         => esc_html__( 'Description coming soon!', 'mbma-mbo-media-access' ),
 				'option_category' => 'basic_option',
 				'description'     => esc_html__( 'Brief description of media product.', 'mbma-mbo-media-access' ),
 				'toggle_slug'     => 'main_content',

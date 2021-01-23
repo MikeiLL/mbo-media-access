@@ -7,3 +7,5 @@ export default [
     MindbodyAudio,
     MindbodyVideo
 ];
+
+

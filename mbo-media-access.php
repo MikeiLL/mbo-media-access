@@ -8,7 +8,7 @@ Author:      Mike iLL Kilmer
 Author URI:  http://mzoo.org
 License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: mboma-mbo-media-access
+Text Domain: mbma-mbo-media-access
 Domain Path: /languages
 
 Mbo Media Access is free software: you can redistribute it and/or modify
@@ -46,6 +46,8 @@ define( NS . 'PLUGIN_NAME_DIR', plugin_dir_path( __FILE__ ) );
 
 define( NS . 'PLUGIN_NAME_URL', plugin_dir_url( __FILE__ ) );
 
+define( NS . 'PLUGIN_ASSETS', trailingslashit( NS\PLUGIN_NAME_URL . 'assets' ) );
+
 define( NS . 'PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
 define( NS . 'PLUGIN_TEXT_DOMAIN', 'on-demand-yoga' );
@@ -70,12 +72,40 @@ function mbo_media_access_has_mindbody_api() {
 function buy_subscribe_links($price){
     $html = '';
     $html .= '          <div class="wp-audio-price-signup">';
-	$html .= '			    <a href="#">Buy ($' . $price . ') </a> | <a href="#">Subscribe</a>';
+	$html .= '			    <a href="' . \MZ_Mindbody\PLUGIN_NAME_URL . 'inc/frontend/views/modals/modal_descriptions.php" data-toggle="modal" data-choice="buy" data-target="mzModal">Buy ($' . $price . ') </a> | ';
+	$html .= '			    <a href="' . \MZ_Mindbody\PLUGIN_NAME_URL . 'inc/frontend/views/modals/modal_descriptions.php" data-toggle="modal" data-choice="subscribe" data-target="mzModal">Subscribe</a>';
 	$html .= '          </div>';
 	return $html;
 }
 
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_scripts' );
 
+function enqueue_scripts() {
+    wp_enqueue_script(
+        'mbma-mbo-media-acces-js',
+        NS\PLUGIN_ASSETS . 'js/main.js',
+        array( 'jquery' ),
+        NS\PLUGIN_VERSION,
+        true
+    );
+    if (!wp_script_is('mz_mbo_bootstrap_script')){
+        wp_register_script('mz_mbo_bootstrap_script', \MZ_Mindbody\PLUGIN_NAME_URL . 'dist/scripts/main.js', array('jquery'), \MZ_Mindbody\PLUGIN_VERSION, true);
+        wp_enqueue_script('mz_mbo_bootstrap_script');
+    }
+    if (!wp_style_is('mz_mindbody_style')){
+        wp_register_style('mz_mindbody_style', \MZ_Mindbody\PLUGIN_NAME_URL . 'dist/styles/main.css');
+        wp_enqueue_style('mz_mindbody_style');
+    }
+}
+
+add_shortcode('modal_html_now', function (){
+    $output = '';
+    $output .= '       <a href="' . \MZ_Mindbody\PLUGIN_NAME_URL . 'inc/frontend/views/modals/modal_descriptions.php" class="btn btn-primary" data-toggle="modal" data-target="mzModal">';
+    $output .= '         Open modal';
+    $output .= '       </a>';
+    //$output .= '        <div id="mzModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mzSmallModalLabel" aria-hidden="true"></div>';
+    return $output;
+});
 
 /**
  * Child Plugin Notice
